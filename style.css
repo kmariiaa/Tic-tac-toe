@@ -1,0 +1,43 @@
+html, body {
+    background-color: #f5fcd9;
+    height: 100vh;
+    margin: 20px;
+    padding: 0;
+}
+
+.gamefield {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width: 150px;
+    height: 150px;
+}
+
+.field {
+    background-color: lightgray;
+    border: 1px solid black;
+    font-size: 40px;
+    text-align: center;
+}
+
+.empty:hover {
+    background-color: aliceblue;
+}
+
+.X {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+.O {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.size-container, .win-container {
+    margin: 10px 0;
+}
+
+.newgame {
+    margin: 15px 0;
+}

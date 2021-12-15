@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Крестики-Нолики</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="gamefield">
+        </main>
+
+        <section class="settings">
+            <h3>Ход игрока: <span class="move"></span></h3>
+            <br>
+            <div>
+                <h3>Статистика: </h3>
+                <p>Побед игрока X: <span class="playerX">0</span></p>
+                <p>Побед игрока O: <span class="playerO">0</span></p>
+                <p>Ничья: <span class="draw">0</span></p>
+                <button onclick="resetStat()">Сбросить статистику</button>
+                <button class="resetGame" onclick="resetGame()">Сбросить текущую игру</button>
+            </div>
+            <br>
+            <form>
+                <h3>Настройки игры: </h3>
+                <div class="size-container">
+                    Размер игровой сетки:
+                    <select class="size" name="size" onchange="changeSize()">
+                    </select>
+                </div>
+
+                <div class="win-container">
+                    Победная комбинация: 
+                    <select class="win" name="win">
+                    </select>
+                </div>
+            </form>
+            <button class="newgame" onclick="newgame()">Новая игра</button>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html> 
