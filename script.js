@@ -73,6 +73,7 @@ function changeSize() {
 
 // Функция игры
 function newgame() {
+    document.querySelector('.gamefield').classList.remove('end');
     let size = document.querySelector('.size').value;
     localStorage.setItem('size', size);
     localStorage.setItem('combination', document.querySelector('.win').value);
@@ -127,19 +128,24 @@ function newgame() {
                     document.querySelector('.move').textContent = '';
                     localStorage.setItem('lastgame',winner);
                     for (let field of fields) field.classList.remove('empty');
+                    document.querySelector('.gamefield').classList.add('end');
                     return;
                 }
             }
 
-            if(!document.querySelector('.empty')) {
+            if(!document.querySelector('.empty') && !document.querySelector('.gamefield').classList.contains('end')) {
                 alert("Ничья");
                 document.querySelector('.draw').textContent++;
                 localStorage.setItem('draw', document.querySelector('.draw').textContent);
                 document.querySelector('.move').textContent = '';
                 localStorage.setItem('lastgame','draw');
+                document.querySelector('.gamefield').classList.add('end');
                 return;
             }
+
+            return false;
         }
+        if (document.querySelector('.gamefield').classList.contains('end')) return;
     }
 }
 
